@@ -187,8 +187,8 @@ class Tpl {
         $parsedTemplateFilepath = static::$conf['cache_dir'] . $templateName . "." . md5($templateDirectory . serialize(static::$conf['checksum'])) . '.rtpl.php';
 
         // if the template doesn't exsist throw an error
-        if (!file_exists($templateFilepath)) {
-            $e = new Tpl\NotFoundException('Template ' . $templateName . ' not found!');
+         if (!file_exists($templateFilepath)) {
+             $e = new Tpl\NotFoundException('Template ' . $templateName . ' not found!');
             throw $e->templateFile($templateFilepath);
         }
 
