@@ -214,5 +214,4 @@ class User extends Model{
 
 }
 
-
 ?>
