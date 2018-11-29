@@ -1,11 +1,14 @@
 <?php
-use \Hcode\PageAdmin;
+
+
+use \Hcode\Page;
 
 use \Hcode\Model\User;
 
 use \Hcode\Model\Category;
 
 $app->get("/categories/:idcategory",function($idcategory){
+	User::verifyLogin();
 
 	$page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
 
@@ -22,6 +25,7 @@ $app->get("/categories/:idcategory",function($idcategory){
 	]);
 
 });
+
 
 
 
