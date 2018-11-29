@@ -27,43 +27,44 @@
           <div class="box-body">
             <div class="form-group">
               <label for="desproduct">Nome da produto</label>
-              <input type="text" class="form-control" id="desproduct" name="desproduct" placeholder="Digite o nome do produto">
+              <input type="text" class="form-control" id="desproduct" name="desproduct" placeholder="Digite o nome do produto" required>
             </div>
             <div class="form-group">
               <label for="vlprice">Preço</label>
-              <input type="number" class="form-control" id="vlprice" name="vlprice" step="0.01" placeholder="0.00">
+              <input type="number" class="form-control" id="vlprice" name="vlprice" step="0.01" placeholder="0.00" required>
             </div>
             <div class="form-group">
               <label for="vlwidth">Largura</label>
-              <input type="number" class="form-control" id="vlwidth" name="vlwidth" step="0.01" placeholder="0.00">
+              <input type="number" class="form-control" id="vlwidth" name="vlwidth" step="0.01" placeholder="0.00" required>
             </div>
             <div class="form-group">
               <label for="vlheight">Altura</label>
-              <input type="number" class="form-control" id="vlheight" name="vlheight" step="0.01" placeholder="0.00">
+              <input type="number" class="form-control" id="vlheight" name="vlheight" step="0.01" placeholder="0.00" required>
             </div>
             <div class="form-group">
               <label for="vllength">Comprimento</label>
-              <input type="number" class="form-control" id="vllength" name="vllength" step="0.01" placeholder="0.00">
+              <input type="number" class="form-control" id="vllength" name="vllength" step="0.01" placeholder="0.00" required>
             </div>
             <div class="form-group">
               <label for="vlweight">Peso</label>
-              <input type="number" class="form-control" id="vlweight" name="vlweight" step="0.01" placeholder="0.00">
+              <input type="number" class="form-control" id="vlweight" name="vlweight" step="0.01" placeholder="0.00" required>
             </div>
             <div class="form-group">
               <label for="desurl">URL</label>
-              <input type="text" class="form-control" id="desurl" name="desurl">
+              <input type="text" class="form-control" id="desurl" name="desurl" required>
             </div>
             <div class="form-group">
               <label for="file">Foto</label>
-              <input type="file" class="form-control" id="file" name="file">
+              <input type="file" class="form-control" id="file" name="file" onchange='openFile(event)'>
               <div class="box box-widget">
                 <div class="box-body">
-                  <img class="img-responsive" id="image-preview" src="file" alt="Photo">
+                  <img id='output'>
                 </div>
           </div>
           <!-- /.box-body -->
           <div class="box-footer">
             <button type="submit" class="btn btn-success">Cadastrar</button>
+           <button onclick = "button()" id="danger" type="danger" class="btn btn-danger">Cancelar</button>
           </div>
         </form>
       </div>
@@ -74,3 +75,22 @@
 <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+<script>
+    var openFile = function(event) {
+    var input = event.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+      var dataURL = reader.result;
+      var output = document.getElementById('output');
+      output.src = dataURL;
+    };
+    reader.readAsDataURL(input.files[0]);
+  };
+ function button(){
+  window.moveTo("/admin/products")
+ }
+
+
+</script>
