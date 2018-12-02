@@ -64,7 +64,6 @@
           <!-- /.box-body -->
           <div class="box-footer">
             <button type="submit" class="btn btn-success">Cadastrar</button>
-           <button onclick = "button()" id="danger" type="danger" class="btn btn-danger">Cancelar</button>
           </div>
         </form>
       </div>
@@ -88,9 +87,6 @@
     };
     reader.readAsDataURL(input.files[0]);
   };
- function button(){
-  window.moveTo("/admin/products")
- }
 
 
 </script>

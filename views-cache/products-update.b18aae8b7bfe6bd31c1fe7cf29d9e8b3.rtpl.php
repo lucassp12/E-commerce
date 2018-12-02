@@ -58,7 +58,7 @@
           <!-- /.box-body -->
           <div class="box-footer">
             <button type="submit" class="btn btn-primary">Salvar</button>
-            <button type="danger" class="btn btn-danger">Cancelar</button>
+            <button type="danger" class="btn btn-danger" onclick="window.location.href = '/admin/products'">Cancelar</button>
           </div>
         </form>
       </div>
